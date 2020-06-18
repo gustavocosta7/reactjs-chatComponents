@@ -1,11 +1,13 @@
 import React from 'react'
+import ChatBubbleHandler from '../../../util/ChatBubbleHandler';
 
+interface IProps {
+    width?: number,
+    heigth?: number,
+    text?: string
+} 
 
-const ChatBubbleComponent = (props: { width?: any; heigth?: any; }) => {
-    const {
-        width,
-        heigth
-    } = props;
+const ChatBubbleComponent =  ({width = 30, heigth = 30, text = ''}: IProps) => {
 
     const textBubble = {
         fill: 'white'
@@ -24,11 +26,13 @@ const ChatBubbleComponent = (props: { width?: any; heigth?: any; }) => {
         stopColor: 'rgb(16,144,255)',
         stopOpacity: 1
     } as React.CSSProperties;
-
+    
+    const textSizePx = ChatBubbleHandler.getMessageSizeInPx(text+"")
+    let  maxSizeBallon = textSizePx + width ;
 
     return(
         <div>
-            <svg height="50" width="326px">
+            <svg height="50" width={maxSizeBallon}>
                 <defs>
                     <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style={gradientOne} />
@@ -38,9 +42,9 @@ const ChatBubbleComponent = (props: { width?: any; heigth?: any; }) => {
                 <g>
                     <rect width="100%" height="100%" rx="10" ry="10" fill="url(#grad3)" style={rectBubble}>
                     </rect>
-                    <text x="50%" y="50%" style={textBubble} className="balao" dominant-baseline="middle" text-anchor="middle">
+                    <text x="50%" y="50%" style={textBubble} className="balao" dominantBaseline="middle" textAnchor="middle">
                         <tspan>
-                            Olá pessoas como vão vocÊs
+                            {text}
                         </tspan>
                     </text>
                 </g>
