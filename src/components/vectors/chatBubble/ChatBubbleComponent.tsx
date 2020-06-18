@@ -32,7 +32,7 @@ const ChatBubbleComponent =  ({width = 30, heigth = 30, text = ''}: IProps) => {
 
     return(
         <div>
-            <svg height="50" width={maxSizeBallon}>
+            <svg height={heigth} width={maxSizeBallon}>
                 <defs>
                     <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style={gradientOne} />

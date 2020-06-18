@@ -6,7 +6,7 @@ import ChatBubbleComponent from './components/vectors/chatBubble/ChatBubbleCompo
 function App() {
   return (
     <div className="App">
-      <ChatBubbleComponent></ChatBubbleComponent>
+      <ChatBubbleComponent text={"texto"}></ChatBubbleComponent>
     </div>
   );
 }
