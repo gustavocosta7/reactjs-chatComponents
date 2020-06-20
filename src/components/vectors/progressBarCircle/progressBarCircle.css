@@ -1,6 +1,6 @@
 
 #svg circle {
-    stroke-dashoffset: 30;
+    stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear;
     stroke:	#D3D3D3;
     stroke-width: 1em;
